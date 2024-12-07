@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+        }
+
+        .box ul {
+            width: 120px;
+            height: 100px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .box ul li {
+            margin-left: 10px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            list-style: none;
+            background-image: url(./img/sprite.png);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+    <script>
+        function elfDiagram() {
+        var li = document.querySelectorAll("li");
+        for(var i = 0; i < li.length; i++) {
+            if( i < 4 ) {
+                li[i].setAttribute("style", "background-image: url(./img/sprite.png); width: 20px; height: 20px;");
+                li[i].style.backgroundPosition = `0 -${i*44}px`
+            } else {
+                li[i].setAttribute("style", "background-image: url(./img/sprite.png); width: 20px; height: 20px;");
+                li[i].style.backgroundPosition = `0 -${i*44}px`
+            }
+        }
+    }
+    console.log(elfDiagram());
+    </script>
+</html>
